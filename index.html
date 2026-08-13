@@ -3,182 +3,109 @@
 <głowa>
 <meta charset="UTF-8">
 <meta name="viewport" content="szerokość=szerokość-urządzenia, skala-początkowa=1.0">
-<title>Zaproszenie na randkę ❤️</title>
+<title>Test zgodności Filipa</title>
 
 <styl>
 ciało{
 rodzina czcionek: Arial, sans-serif;
-tło: liniowy gradient(135 stopni,#ffd6e7,#ffe9f2);
+tło:#ffd9e8;
 wyrównanie tekstu: do środka;
-margines:0;
 wypełnienie: 40px;
-min-wysokość: 100vh;
-przepełnienie-x:ukryte;
+przepełnienie:ukryte;
 }
 
-.karta{
+.skrzynka{
+tło:białe;
 maksymalna szerokość:700px;
 margines:auto;
-tło:białe;
 wypełnienie: 30px;
-promień obramowania: 25px;
-cień pola:0 10px 30px rgba(0,0,0,0.15);
+promień obramowania: 20px;
+cień pola:0 0 20px rgba(0,0,0,0.1);
+}
+
+przycisk{
+wypełnienie: 15px 25px;
+margines:10px;
+rozmiar czcionki:20px;
+obramowanie:brak;
+promień obramowania: 12px;
+kursor:wskaźnik;
+}
+
+.opcja{
+tło:#ff9fc4;
+}
+
+#spadek{
+pozycja:absolutna;
 }
 
 .ukryty{
 wyświetlacz:brak;
 }
 
-przycisk{
-obramowanie:brak;
-wypełnienie: 15px 25px;
-margines:10px;
-promień obramowania: 15px;
-rozmiar czcionki:20px;
-kursor:wskaźnik;
-}
-
-#takPrzycisk
-tło: #ff4d88;
-kolor:biały;
-}
-
-#noBtn{
-tło: #ddd;
-}
-
-.kot{
-rozmiar czcionki:100px;
-animacja: spin 3s liniowy nieskończony;
-}
-
-@keyframes spin{
-z{przekształć:obróć(0 stopni);}
-do {przekształcenia:obrót(360 stopni);}
-}
-
-wejście,wybierz{
-wypełnienie: 12px;
-margines:10px;
-rozmiar czcionki:18px;
-promień obramowania: 10px;
-obramowanie: 1px pełne #ccc;
-}
-
-.suwak{
-szerokość:80%;
-}
-
-.opcja{
-wyświetlacz:blok;
-szerokość:90%;
-margines:10px auto;
-tło: #ffb3d1;
-}
-
-h1,h2
-kolor:#ff3d7a;
+h1
+kolor:#ff4f8b;
 }
 </styl>
 </head>
 <treść>
 
-<div class="karta">
+<div class="box">
 
-<div id="ekran1">
+<div id="s1">
 
-<h1>Ktoś chce się z tobą umówić! 🫣</h1>
+<h1>🍕 Test zgodności Filipa 🍕</h1>
 
-<h2>Czy chciałbyś się ze mną umówić?</h2>
+<p>Przejść mogą tylko mężczyźni o wysokich kwalifikacjach.</p>
 
-<button id="yesBtn">TAK ❤️</button>
-<button id="noBtn">NIE 😅</button>
-
-</div>
-
-<div id="screen2" class="ukryty">
-
-<div class="cat">😻💕</div>
-
-<h2>Kliknij mnie 🥰</h2>
-
-<button onclick="nextScreen(3)">Kontynuuj ❤️</button>
+<button onclick="next(2)">Rozpocznij test</button>
 
 </div>
 
-<div id="screen3" class="ukryty">
+<div id="s2" class="ukryte">
 
-Kiedy masz czas? 📅</h2>
+<h2>Co jest lepsze?</h2>
 
-<wybierz>
-<option>1 września</option>
-<option>5 września</option>
-<option>10 września</option>
-<option>15 września</option>
-<option>20 września</option>
-<option>25 września</option>
-</wybierz>
-
-<br>
-
-<wybierz>
-<option>17:00</option>
-<option>18:00</option>
-<option>19:00</option>
-<option>20:00</option>
-<option>21:00</option>
-</wybierz>
-
-<br>
-
-<button onclick="nextScreen(4)">Dalej ❤️</button>
+<button class="option" onclick="next(3)">Pizza</button>
+<button class="option" onclick="next(3)">Piwo</button>
+<button class="option" onclick="next(3)">Drzemka</button>
 
 </div>
 
-<div id="screen4" class="ukryty">
+<div id="s3" class="ukryte">
 
-<h2>Czego sobie życzysz? ☕</h2>
+<h2>Co jest dla Ciebie największym sygnałem ostrzegawczym?</h2>
 
-<button class="option" onclick="nextScreen(5)">Kawa ☕</button>
-<button class="option" onclick="nextScreen(5)">Napoje 🍸</button>
-<button class="option" onclick="nextScreen(5)">Kolacja 🍝</button>
-<button class="option" onclick="nextScreen(5)">Niespodzianka (Ola decyduje) ❤️</button>
-
-</div>
-
-<div id="screen5" class="ukryty">
-
-<h2>Co chciałbyś zrobić? ✨</h2>
-
-<button class="option" onclick="nextScreen(6)">Netflix i relaks 🍿</button>
-
-<button class="option" onclick="nextScreen(6)">
-Połóż się na kocu i obserwuj gwiazdy ⭐
-</przycisk>
-
-<button class="option" onclick="nextScreen(6)">
-Wyjdź na miasto 🌃
-</przycisk>
+<button class="option" onclick="next(4)">Odpowiadam zbyt wolno</button>
+<button class="option" onclick="next(4)">Jem za dużo pizzy</button>
+<button class="option" onclick="next(4)">Jestem zbyt przystojny</button>
 
 </div>
 
-<div id="screen6" class="ukryty">
+<div id="s4" class="ukryte">
 
-<div class="cat">😻💕</div>
+<h2>Obliczanie wyników... 🧠</h2>
 
-Jak bardzo jesteś podekscytowany?
+<button onclick="next(5)">Pokaż wynik</button>
 
-<input class="slider" type="range"
-min="1"
-maks.="10"
-wartość="10"
-id="podekscytowany">
+</div>
 
-<p id="score">10/10 ❤️</p>
+<div id="s5" class="ukryte">
 
-<br>
+<h1>✅ Wynik zgodności: 100%</h1>
 
-<button onclick="finish()">Zakończ ❤️</button>
+<p>
+Po szeroko zakrojonych badaniach naukowych,
+doszliśmy do wniosku, że powinieneś pójść na randkę z Olą.
+</p>
+
+<p>
+Niestety, decyzja ta jest ostateczna.
+</p>
+
+<button onclick="yes()">Zaakceptuj los ❤️</button>
+<button id="decline">Odrzuć 😅</button>
 
 </div>
 
@@ -186,26 +113,51 @@ id="podekscytowany">
 
 <skrypt>
 
-niech yesBtn=document.getElementById("yesBtn");
-niech noBtn=document.getElementById("noBtn");
+funkcja next(num){
 
-niech rozmiar=20;
+document.querySelectorAll("div[id^='s']")
+.forEach(el => el.classList.add("ukryte"));
 
-noBtn.addEventListener("najechanie myszką",()=>{
+document.getElementById("s"+num)
+.classList.remove("ukryte");
 
-rozmiar+=15;
+}
 
-yesBtn.style.fontSize=rozmiar+"px";
-yesBtn.style.padding=(rozmiar)+"px";
+funkcja tak(){
+
+dokument.ciało.innerHTML = `
+
+<h1 style="margin-top:100px;color:#ff4f8b">
+🥳 Doskonała decyzja Filip!
+</h1>
+
+<h2>
+Twoja nagroda:
+randka z Olą ❤️
+</h2>
+
+<h2>
+Do zobaczenia wkrótce ☕😉
+</h2>
+
+`;
+
+}
+
+const btn = document.getElementById("odrzuć");
+
+btn.addEventListener("najechanie myszką",()=>{
+
+przycisk.styl.lewy =
+Math.random()*(window.innerWidth-150)+"px";
+
+przycisk.styl.góra =
+Math.random()*(window.innerHeight-80)+"px";
 
 });
 
-noBtn.addEventListener("click",()=>{
+</script>
 
-następnyEkran(2);
+</ciało>
+</html>
 
-});
-
-funkcja nextScreen(n){
-
-document.querySelectorAll("[id
