@@ -3,10 +3,91 @@
 <głowa>
 <meta charset="UTF-8">
 <meta name="viewport" content="szerokość=szerokość-urządzenia, skala-początkowa=1.0">
-<title>Niespodzianka ❤️</title>
+<title>Test Filipa</title>
+
+<styl>
+ciało{
+rodzina czcionek:Arial,sans-serif;
+tło:#ffe6f0;
+wyrównanie tekstu: do środka;
+wypełnienie-góra:100px;
+przepełnienie:ukryte;
+}
+
+przycisk{
+wypełnienie: 15px 25px;
+rozmiar czcionki:20px;
+margines:10px;
+obramowanie:brak;
+promień obramowania: 12px;
+kursor:wskaźnik;
+}
+
+.ekran{
+wyświetlacz:brak;
+}
+
+#s1{
+wyświetlacz:blok;
+}
+
+#NIE{
+pozycja:absolutna;
+}
+</styl>
 </head>
+
 <treść>
-<h1>Test ❤️</h1>
-<p>Jeśli masz dziesięć napisów, GitHub Pages działa.</p>
+
+<div id="s1" class="ekran">
+<h1>🕵️ Filipie, przed tobą bardzo pomocny test</h1>
+<p>Tylko 1% ludzi potrafi go zdać.</p>
+<button onclick="show(2)">Podejmuję wyzwanie</button>
+</div>
+
+<div id="s2" class="ekran">
+<h1>Co jest lepsze?</h1>
+<button onclick="show(3)">Lamborghini</button>
+<button onclick="show(3)">Pizza 🍕</button>
+<button onclick="show(3)">Wolny piątek</button>
+<button onclick="show(3)">Aleksandra ❤️</button>
+</div>
+
+<div id="s3" class="ekran">
+<h1>🤔 Analizuję odpowiedź...</h1>
+<button onclick="show(4)">Pokaż wynik</button>
+</div>
+
+<div id="s4" class="ekran">
+<h1>✅ WYNIK TESTU</h1>
+<p>Gratulacje Filip!</p>
+<p>Jesteś idealnym kandydatem na randkę z Aleksandrą ❤️</p>
+
+<button onclick="yes()">Jasne ❤️</button>
+<button id="no">Nie 😅</button>
+</div>
+
+<skrypt>
+funkcja pokaż(n){
+dokument.querySelectorAll('.screen').forEach(x=>{
+x.style.display='brak';
+});
+document.getElementById('s'+n).style.display='block';
+}
+
+funkcja tak(){
+dokument.ciało.innerHTML=
+"<h1>🥳 Świetny wybór!</h1><h2>Nagroda: kawa lub drink z Aleksandrą ☕❤️</h2>";
+}
+
+const noBtn=document.getElementById('no');
+
+noBtn.addEventListener('najechanie myszą',()=>{
+noBtn.style.left=Math.random()*(window.innerWidth-120)+'px';
+noBtn.style.top=Math.random()*(window.innerHeight-80)+'px';
+});
+</script>
+
 </ciało>
 </html>
+
