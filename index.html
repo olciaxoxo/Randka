@@ -3,15 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Date Invitation ❤️</title>
+<title>Question for Filip ❤️</title>
 
 <style>
-
 body{
 margin:0;
 font-family:Arial,sans-serif;
 background:linear-gradient(135deg,#ff9ac6,#ffddec);
-height:100vh;
+min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -20,12 +19,12 @@ overflow:hidden;
 
 .card{
 background:white;
-padding:40px;
+padding:35px;
 border-radius:25px;
 box-shadow:0 10px 30px rgba(0,0,0,.15);
 text-align:center;
+width:85%;
 max-width:500px;
-width:90%;
 }
 
 h1{
@@ -34,7 +33,7 @@ color:#ff4f8b;
 
 button{
 padding:15px 25px;
-font-size:20px;
+font-size:18px;
 border:none;
 border-radius:12px;
 cursor:pointer;
@@ -47,7 +46,7 @@ color:white;
 }
 
 #no{
-background:#ddd;
+background:#eaeaea;
 position:absolute;
 }
 
@@ -57,32 +56,26 @@ display:none;
 
 input, select{
 padding:12px;
-font-size:18px;
+font-size:16px;
 border-radius:10px;
 border:1px solid #ccc;
 margin:10px;
-width:250px;
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="card" id="screen1">
-
+<div class="card" id="page1">
 <h1>Hey Filip 👀</h1>
-
 <p>I have a very important question...</p>
 
 <button class="yes" onclick="showQuestion()">
 Continue ❤️
 </button>
-
 </div>
 
-<div class="card hidden" id="screen2">
-
+<div class="card hidden" id="page2">
 <h1>Would you go on a date with Ola? ❤️</h1>
 
 <button class="yes" onclick="showCalendar()">
@@ -92,90 +85,86 @@ YES 😍
 <button id="no">
 NO 😅
 </button>
-
 </div>
 
-<div class="card hidden" id="screen3">
-
+<div class="card hidden" id="page3">
 <h1>📅 Pick a date</h1>
 
 <p>When are you free in September?</p>
 
-<input type="date"
+<input
+type="date"
+id="date"
 min="2026-09-01"
-max="2026-09-30"
-id="date">
+max="2026-09-30">
 
 <br>
 
 <select id="time">
-
 <option>17:00</option>
 <option>18:00</option>
 <option>19:00</option>
 <option>20:00</option>
 <option>21:00</option>
-
 </select>
 
 <br>
 
-<button class="yes" onclick="finish()">
+<button class="yes" onclick="finishDate()">
 Confirm ❤️
 </button>
-
 </div>
 
 <script>
 
-function showQuestion(){
-document.getElementById("screen1").classList.add("hidden");
-document.getElementById("screen2").classList.remove("hidden");
+function showQuestion() {
+document.getElementById("page1").classList.add("hidden");
+document.getElementById("page2").classList.remove("hidden");
 }
 
-function showCalendar(){
-document.getElementById("screen2").classList.add("hidden");
-document.getElementById("screen3").classList.remove("hidden");
+function showCalendar() {
+document.getElementById("page2").classList.add("hidden");
+document.getElementById("page3").classList.remove("hidden");
 }
 
-function finish(){
+function finishDate() {
 
-let date=document.getElementById("date").value;
-let time=document.getElementById("time").value;
+var date = document.getElementById("date").value;
+var time = document.getElementById("time").value;
 
-document.body.innerHTML=`
-
+document.body.innerHTML = `
 <div class="card">
 
 <h1>🥳 Perfect!</h1>
 
-<p>
-Date selected:
-</p>
+<p>See you soon, Filip ❤️</p>
 
 <h2>${date}</h2>
-
 <h2>${time}</h2>
 
+<p style="margin-top:25px;">
+Unfortunately, Ola spent way too much time building this website
+but still couldn't figure out how to receive your answer automatically. 😅
+</p>
+
 <p>
-See you soon Filip ❤️
+Please take a screenshot of this page and send it to Ola,
+so she knows when you're free. 📸❤️
 </p>
 
 </div>
-
 `;
-
 }
 
-const noBtn=document.getElementById("no");
+var noBtn = document.getElementById("no");
 
-noBtn.addEventListener("mouseover",()=>{
+noBtn.addEventListener("mouseover", function(){
 
-noBtn.style.left=
-Math.random()*(window.innerWidth-120)+"px";
+noBtn.style.left =
+Math.random() * (window.innerWidth - 120) + "px";
 
-noBtn.style.top=
-Math.random()*(window.innerHeight-80)+"px";
+noBtn.style.top =
+Math.random() * (window.innerHeight - 80) + "px";
 
 });
 
