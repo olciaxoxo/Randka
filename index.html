@@ -1,123 +1,123 @@
 <!DOCTYPE html>
-<html lang="pl">
-<głowa>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
-<meta name="viewport" content="szerokość=szerokość-urządzenia, skala-początkowa=1.0">
-<title>Pytanie do Filipa ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Question for Filip ❤️</title>
 
-<styl>
+<style>
 
 *{
-margines:0;
-wypełnienie: 0;
+margin:0;
+padding:0;
 box-sizing:border-box;
 }
 
-ciało{
-wysokość: 100vh;
-wyświetlacz:flex;
-wyśrodkuj zawartość;
-wyrównaj-elementy:środek;
-rodzina czcionek:Arial,sans-serif;
-tło:liniowy-gradient(135 stopni,#ff9ecf,#ffd6e7);
-przepełnienie:ukryte;
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff9ecf,#ffd6e7);
+overflow:hidden;
 }
 
-.karta{
-tło:białe;
-wypełnienie: 40px;
-promień obramowania:30px;
-cień pola:0 15px 40px rgba(0,0,0,.15);
-wyrównanie tekstu: do środka;
-maksymalna szerokość: 600px;
-szerokość:90%;
+.card{
+background:white;
+padding:40px;
+border-radius:30px;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+text-align:center;
+max-width:600px;
+width:90%;
 }
 
 h1{
-kolor:#ff4d8d;
-margines-dolny:20px;
+color:#ff4d8d;
+margin-bottom:20px;
 }
 
-P{
-rozmiar czcionki:20px;
-margines-dolny:25px;
+p{
+font-size:20px;
+margin-bottom:25px;
 }
 
-przycisk{
-obramowanie:brak;
-wypełnienie: 15px 30px;
-rozmiar czcionki:20px;
-promień obramowania: 15px;
-kursor:wskaźnik;
-margines:10px;
+button{
+border:none;
+padding:15px 30px;
+font-size:20px;
+border-radius:15px;
+cursor:pointer;
+margin:10px;
 }
 
-#Tak{
-tło: #ff4d8d;
-kolor:biały;
+#yes{
+background:#ff4d8d;
+color:white;
 }
 
-#NIE{
-tło:#eee;
-pozycja:absolutna;
+#no{
+background:#eee;
+position:absolute;
 }
 
-.ukryty{
-wyświetlacz:brak;
+.hidden{
+display:none;
 }
 
-</styl>
+</style>
 </head>
 
-<treść>
+<body>
 
 <div class="card" id="screen1">
 
-Hej Filip 👀</h1>
+<h1>Hey Filip 👀</h1>
 
 <p>
-Mam jedno bardzo ważne pytanie...
+I have one very important question...
 </p>
 
 <button id="yes" onclick="showQuestion()">
-Kontynuuj ❤️
-</przycisk>
+Continue ❤️
+</button>
 
 </div>
 
-<div class="karta ukryta" id="ekran2">
+<div class="card hidden" id="screen2">
 
-<h1>Chcesz się umówić z Olą? ❤️</h1>
+<h1>Would you like to go on a date with Ola? ❤️</h1>
 
 <button id="yes" onclick="acceptDate()">
-TAK 😍
-</przycisk>
+YES 😍
+</button>
 
-<button id="nie">
-NIE 😅
-</przycisk>
+<button id="no">
+NO 😅
+</button>
 
 </div>
 
-<skrypt>
+<script>
 
-funkcja showQuestion(){
-document.getElementById("screen1").classList.add("ukryte");
-document.getElementById("screen2").classList.remove("ukryte");
+function showQuestion(){
+document.getElementById("screen1").classList.add("hidden");
+document.getElementById("screen2").classList.remove("hidden");
 }
 
-funkcja acceptDate(){
+function acceptDate(){
 
-dokument.ciało.innerHTML=`
+document.body.innerHTML=`
 
-<div class="karta">
+<div class="card">
 
-<h1>🥳 Doskonały wybór!</h1>
+<h1>🥳 Excellent choice!</h1>
 
 <p>
-Twoja nagroda:
+Your reward:
 <br><br>
-☕ 🍸Kawa/drink z Olą
+☕🍸 Coffee/drink with Ola
 </p>
 
 </div>
@@ -126,9 +126,9 @@ Twoja nagroda:
 
 }
 
-const noBtn=document.getElementById("nie");
+const noBtn=document.getElementById("no");
 
-noBtn.addEventListener("najechanie myszką",()=>{
+noBtn.addEventListener("mouseover",()=>{
 
 noBtn.style.left=
 Math.random()*(window.innerWidth-120)+"px";
@@ -140,5 +140,5 @@ Math.random()*(window.innerHeight-70)+"px";
 
 </script>
 
-</ciało>
+</body>
 </html>
