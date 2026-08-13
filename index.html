@@ -3,161 +3,91 @@
 <głowa>
 <meta charset="UTF-8">
 <meta name="viewport" content="szerokość=szerokość-urządzenia, skala-początkowa=1.0">
-<title>Test zgodności Filipa</title>
+<title>Pytanie do Filipa</title>
 
 <styl>
 ciało{
-rodzina czcionek: Arial, sans-serif;
-tło:#ffd9e8;
+rodzina czcionek:Arial,sans-serif;
+tło: #ffd6e7;
 wyrównanie tekstu: do środka;
-wypełnienie: 40px;
+wypełnienie-góra:120px;
 przepełnienie:ukryte;
 }
 
-.skrzynka{
-tło:białe;
-maksymalna szerokość:700px;
-margines:auto;
-wypełnienie: 30px;
-promień obramowania: 20px;
-cień pola:0 0 20px rgba(0,0,0,0.1);
-}
-
 przycisk{
-wypełnienie: 15px 25px;
+wypełnienie: 15px 30px;
+rozmiar czcionki: 22px;
 margines:10px;
-rozmiar czcionki:20px;
 obramowanie:brak;
-promień obramowania: 12px;
+promień obramowania: 15px;
 kursor:wskaźnik;
 }
 
-.opcja{
-tło:#ff9fc4;
+#Tak{
+tło: #ff4f8b;
+kolor:biały;
 }
 
-#spadek{
+#NIE{
 pozycja:absolutna;
+tło: #ddd;
 }
 
 .ukryty{
 wyświetlacz:brak;
 }
-
-h1
-kolor:#ff4f8b;
-}
 </styl>
 </head>
 <treść>
 
-<div class="box">
-
-<div id="s1">
-
-<h1>🍕 Test zgodności Filipa 🍕</h1>
-
-<p>Przejść mogą tylko mężczyźni o wysokich kwalifikacjach.</p>
-
-<button onclick="next(2)">Rozpocznij test</button>
-
+<div id="start">
+Filip, mam bardzo ważne pytanie... 👀</h1>
+<button onclick="showQuestion()">❤️ Kontynuuj</button>
 </div>
 
-<div id="s2" class="ukryte">
+<div id="question" class="hidden">
+<h1>Chcesz się umówić z Aleksandrą? ❤️</h1>
 
-<h2>Co jest lepsze?</h2>
-
-<button class="option" onclick="next(3)">Pizza</button>
-<button class="option" onclick="next(3)">Piwo</button>
-<button class="option" onclick="next(3)">Drzemka</button>
-
-</div>
-
-<div id="s3" class="ukryte">
-
-<h2>Co jest dla Ciebie największym sygnałem ostrzegawczym?</h2>
-
-<button class="option" onclick="next(4)">Odpowiadam zbyt wolno</button>
-<button class="option" onclick="next(4)">Jem za dużo pizzy</button>
-<button class="option" onclick="next(4)">Jestem zbyt przystojny</button>
-
-</div>
-
-<div id="s4" class="ukryte">
-
-<h2>Obliczanie wyników... 🧠</h2>
-
-<button onclick="next(5)">Pokaż wynik</button>
-
-</div>
-
-<div id="s5" class="ukryte">
-
-<h1>✅ Wynik zgodności: 100%</h1>
-
-<p>
-Po szeroko zakrojonych badaniach naukowych,
-doszliśmy do wniosku, że powinieneś pójść na randkę z Olą.
-</p>
-
-<p>
-Niestety, decyzja ta jest ostateczna.
-</p>
-
-<button onclick="yes()">Zaakceptuj los ❤️</button>
-<button id="decline">Odrzuć 😅</button>
-
-</div>
-
+<button id="yes" onclick="yesAnswer()">TAK</button>
+<button id="no">NIE</button>
 </div>
 
 <skrypt>
 
-funkcja next(num){
-
-document.querySelectorAll("div[id^='s']")
-.forEach(el => el.classList.add("ukryte"));
-
-document.getElementById("s"+num)
-.classList.remove("ukryte");
-
+funkcja showQuestion(){
+document.getElementById("start").classList.add("ukryte");
+document.getElementById("pytanie").classList.remove("ukryte");
 }
 
-funkcja tak(){
-
-dokument.ciało.innerHTML = `
-
-<h1 style="margin-top:100px;color:#ff4f8b">
-🥳 Doskonała decyzja Filip!
+funkcja yesAnswer(){
+dokument.ciało.innerHTML =
+`
+<h1 style="margin-top:150px;color:#ff4f8b;">
+🎉 Świetny wybór!
 </h1>
 
 <h2>
 Twoja nagroda:
-randka z Olą ❤️
+kawa/drink z Aleksandrą ❤️
 </h2>
-
-<h2>
-Do zobaczenia wkrótce ☕😉
-</h2>
-
 `;
-
 }
 
-const btn = document.getElementById("odrzuć");
+const noBtn = document.getElementById("no");
 
-btn.addEventListener("najechanie myszką",()=>{
+noBtn.addEventListener("najechanie myszką", () => {
+noBtn.style.left =
+Math.random() * (window.innerWidth - 120) + "px";
 
-przycisk.styl.lewy =
-Math.random()*(window.innerWidth-150)+"px";
+noBtn.style.top =
+Math.random() * (window.innerHeight - 80) + "px";
+});
 
-przycisk.styl.góra =
-Math.random()*(window.innerHeight-80)+"px";
-
+noBtn.addEventListener("kliknij", () => {
+alert("Dobra próba 😂");
 });
 
 </script>
 
 </ciało>
 </html>
-
