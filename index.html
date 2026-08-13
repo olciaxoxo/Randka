@@ -3,88 +3,139 @@
 <głowa>
 <meta charset="UTF-8">
 <meta name="viewport" content="szerokość=szerokość-urządzenia, skala-początkowa=1.0">
-<title>Pytanie do Filipa</title>
+<title>Pytanie do Filipa ❤️</title>
 
 <styl>
+
+*{
+margines:0;
+wypełnienie: 0;
+box-sizing:border-box;
+}
+
 ciało{
+wysokość: 100vh;
+wyświetlacz:flex;
+wyśrodkuj zawartość;
+wyrównaj-elementy:środek;
 rodzina czcionek:Arial,sans-serif;
-tło: #ffd6e7;
-wyrównanie tekstu: do środka;
-wypełnienie-góra:120px;
+tło:liniowy-gradient(135 stopni,#ff9ecf,#ffd6e7);
 przepełnienie:ukryte;
 }
 
+.karta{
+tło:białe;
+wypełnienie: 40px;
+promień obramowania:30px;
+cień pola:0 15px 40px rgba(0,0,0,.15);
+wyrównanie tekstu: do środka;
+maksymalna szerokość: 600px;
+szerokość:90%;
+}
+
+h1{
+kolor:#ff4d8d;
+margines-dolny:20px;
+}
+
+P{
+rozmiar czcionki:20px;
+margines-dolny:25px;
+}
+
 przycisk{
-wypełnienie: 15px 30px;
-rozmiar czcionki: 22px;
-margines:10px;
 obramowanie:brak;
+wypełnienie: 15px 30px;
+rozmiar czcionki:20px;
 promień obramowania: 15px;
 kursor:wskaźnik;
+margines:10px;
 }
 
 #Tak{
-tło: #ff4f8b;
+tło: #ff4d8d;
 kolor:biały;
 }
 
 #NIE{
+tło:#eee;
 pozycja:absolutna;
-tło: #ddd;
 }
 
 .ukryty{
 wyświetlacz:brak;
 }
+
 </styl>
 </head>
+
 <treść>
 
-<div id="start">
-Filip, mam bardzo ważne pytanie... 👀</h1>
-<button onclick="showQuestion()">❤️ Kontynuuj</button>
+<div class="card" id="screen1">
+
+Hej Filip 👀</h1>
+
+<p>
+Mam jedno bardzo ważne pytanie...
+</p>
+
+<button id="yes" onclick="showQuestion()">
+Kontynuuj ❤️
+</przycisk>
+
 </div>
 
-<div id="question" class="hidden">
-<h1>Chcesz się umówić z Aleksandrą? ❤️</h1>
+<div class="karta ukryta" id="ekran2">
 
-<button id="yes" onclick="yesAnswer()">TAK</button>
-<button id="no">NIE</button>
+<h1>Chcesz się umówić z Olą? ❤️</h1>
+
+<button id="yes" onclick="acceptDate()">
+TAK 😍
+</przycisk>
+
+<button id="nie">
+NIE 😅
+</przycisk>
+
 </div>
 
 <skrypt>
 
 funkcja showQuestion(){
-document.getElementById("start").classList.add("ukryte");
-document.getElementById("pytanie").classList.remove("ukryte");
+document.getElementById("screen1").classList.add("ukryte");
+document.getElementById("screen2").classList.remove("ukryte");
 }
 
-funkcja yesAnswer(){
-dokument.ciało.innerHTML =
-`
-<h1 style="margin-top:150px;color:#ff4f8b;">
-🎉 Świetny wybór!
-</h1>
+funkcja acceptDate(){
 
-<h2>
+dokument.ciało.innerHTML=`
+
+<div class="karta">
+
+<h1>🥳 Doskonały wybór!</h1>
+
+<p>
 Twoja nagroda:
-kawa/drink z Aleksandrą ❤️
-</h2>
+<br><br>
+☕ 🍸Kawa/drink z Olą
+</p>
+
+</div>
+
 `;
+
 }
 
-const noBtn = document.getElementById("no");
+const noBtn=document.getElementById("nie");
 
-noBtn.addEventListener("najechanie myszką", () => {
-noBtn.style.left =
-Math.random() * (window.innerWidth - 120) + "px";
+noBtn.addEventListener("najechanie myszką",()=>{
 
-noBtn.style.top =
-Math.random() * (window.innerHeight - 80) + "px";
-});
+noBtn.style.left=
+Math.random()*(window.innerWidth-120)+"px";
 
-noBtn.addEventListener("kliknij", () => {
-alert("Dobra próba 😂");
+noBtn.style.top=
+Math.random()*(window.innerHeight-70)+"px";
+
 });
 
 </script>
