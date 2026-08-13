@@ -3,67 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Question for Filip ❤️</title>
+<title>Date Invitation ❤️</title>
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff9ac6,#ffddec);
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#ff9ecf,#ffd6e7);
 overflow:hidden;
 }
 
 .card{
 background:white;
 padding:40px;
-border-radius:30px;
-box-shadow:0 15px 40px rgba(0,0,0,.15);
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
 text-align:center;
-max-width:600px;
+max-width:500px;
 width:90%;
 }
 
 h1{
-color:#ff4d8d;
-margin-bottom:20px;
-}
-
-p{
-font-size:20px;
-margin-bottom:25px;
+color:#ff4f8b;
 }
 
 button{
-border:none;
-padding:15px 30px;
+padding:15px 25px;
 font-size:20px;
-border-radius:15px;
+border:none;
+border-radius:12px;
 cursor:pointer;
 margin:10px;
 }
 
-#yes{
-background:#ff4d8d;
+.yes{
+background:#ff4f8b;
 color:white;
 }
 
 #no{
-background:#eee;
+background:#ddd;
 position:absolute;
 }
 
 .hidden{
 display:none;
+}
+
+input, select{
+padding:12px;
+font-size:18px;
+border-radius:10px;
+border:1px solid #ccc;
+margin:10px;
+width:250px;
 }
 
 </style>
@@ -75,11 +73,9 @@ display:none;
 
 <h1>Hey Filip 👀</h1>
 
-<p>
-I have one very important question...
-</p>
+<p>I have a very important question...</p>
 
-<button id="yes" onclick="showQuestion()">
+<button class="yes" onclick="showQuestion()">
 Continue ❤️
 </button>
 
@@ -87,14 +83,45 @@ Continue ❤️
 
 <div class="card hidden" id="screen2">
 
-<h1>Would you like to go on a date with Ola? ❤️</h1>
+<h1>Would you go on a date with Ola? ❤️</h1>
 
-<button id="yes" onclick="acceptDate()">
+<button class="yes" onclick="showCalendar()">
 YES 😍
 </button>
 
 <button id="no">
 NO 😅
+</button>
+
+</div>
+
+<div class="card hidden" id="screen3">
+
+<h1>📅 Pick a date</h1>
+
+<p>When are you free in September?</p>
+
+<input type="date"
+min="2026-09-01"
+max="2026-09-30"
+id="date">
+
+<br>
+
+<select id="time">
+
+<option>17:00</option>
+<option>18:00</option>
+<option>19:00</option>
+<option>20:00</option>
+<option>21:00</option>
+
+</select>
+
+<br>
+
+<button class="yes" onclick="finish()">
+Confirm ❤️
 </button>
 
 </div>
@@ -106,18 +133,32 @@ document.getElementById("screen1").classList.add("hidden");
 document.getElementById("screen2").classList.remove("hidden");
 }
 
-function acceptDate(){
+function showCalendar(){
+document.getElementById("screen2").classList.add("hidden");
+document.getElementById("screen3").classList.remove("hidden");
+}
+
+function finish(){
+
+let date=document.getElementById("date").value;
+let time=document.getElementById("time").value;
 
 document.body.innerHTML=`
 
 <div class="card">
 
-<h1>🥳 Excellent choice!</h1>
+<h1>🥳 Perfect!</h1>
 
 <p>
-Your reward:
-<br><br>
-☕🍸 Coffee/drink with Ola
+Date selected:
+</p>
+
+<h2>${date}</h2>
+
+<h2>${time}</h2>
+
+<p>
+See you soon Filip ❤️
 </p>
 
 </div>
@@ -134,7 +175,7 @@ noBtn.style.left=
 Math.random()*(window.innerWidth-120)+"px";
 
 noBtn.style.top=
-Math.random()*(window.innerHeight-70)+"px";
+Math.random()*(window.innerHeight-80)+"px";
 
 });
 
