@@ -4,88 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="szerokość=szerokość-urządzenia, skala-początkowa=1.0">
 <title>Niespodzianka ❤️</title>
-
-<styl>
-ciało{
-rodzina czcionek: Arial, sans-serif;
-tło:#ffe6f0;
-wyrównanie tekstu: do środka;
-wypełnienie: 50px;
-przepełnienie:ukryte;
-}
-
-przycisk{
-wypełnienie: 15px 30px;
-rozmiar czcionki:20px;
-obramowanie:brak;
-promień obramowania: 10px;
-kursor:wskaźnik;
-margines:10px;
-}
-
-#gra,#pytanie{
-wyświetlacz:brak;
-}
-
-#NIE{
-pozycja:absolutna;
-}
-</styl>
 </head>
-
 <treść>
-
-<div id="start">
-<h1>❤️ Mam dla Ciebie mała niespodziankę ❤️</h1>
-<p>Kliknij, aby uruchomić grę.</p>
-<button onclick="startGame()">Rozpocznij</button>
-</div>
-
-<div id="gra">
-<h2>Znajdź ukryte serce ❤️</h2>
-
-<button onclick="wrong()">Nie ten</button>
-<button onclick="wrong()">Też nie</button>
-<button onclick="wrong()">Prawie</button>
-<button onclick="win()">❤️</button>
-</div>
-
-<div id="pytanie">
-<h1>Czy pójdziesz ze względu na randkę? 😊</h1>
-
-<button onclick="yesAnswer()">Tak ❤️</button>
-<button id="no">Nie 😅</button>
-</div>
-
-<skrypt>
-
-funkcja startGame(){
-document.getElementById("start").style.display="none";
-document.getElementById("gra").style.display="blok";
-}
-
-funkcja nieprawidłowa(){
-alert("Ups! jeszcze 😊");
-}
-
-funkcja win(){
-document.getElementById("gra").style.display="brak";
-document.getElementById("pytanie").style.display="blok";
-}
-
-funkcja yesAnswer(){
-dokument.ciało.innerHTML =
-"<h1>❤️ Hurra! Bardzo się cieszę! ❤️</h1><h2>To kiedy kawa? ☕ 😊</h2>";
-}
-
-const noBtn = document.getElementById("no");
-
-noBtn.addEventListener("najechanie myszką", () => {
-noBtn.style.left = Math.random() * (window.innerWidth - 150) + "px";
-noBtn.style.top = Math.random() * (window.innerHeight - 100) + "px";
-});
-
-</script>
-
+<h1>Test ❤️</h1>
+<p>Jeśli masz dziesięć napisów, GitHub Pages działa.</p>
 </ciało>
 </html>
